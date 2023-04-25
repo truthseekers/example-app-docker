@@ -49,6 +49,14 @@
                                 </div>
 
                                 <h2 class="mt-6 text-xl font-semibold text-gray-900 dark:text-white">{{dirname(__FILE__)}}</h2>
+                                <p>connection: {{env('DB_CONNECTION', 'mysql')}}</p>
+                                <p>host: {{env('DB_HOST', '127.0.0.1')}}</p>
+                                <p>port: {{env('DB_PORT', '3306')}}</p>
+                                <p>database: {{env('DB_DATABASE', 'forge')}}</p>
+                                <p>username: {{env('DB_USERNAME', 'forge')}}</p>
+                                <p>password: {{env('DB_PASSWORD', '')}}</p>
+                                <p>socket: {{env('DB_SOCKET', '')}}</p>
+                                <p>url: {{env('DATABASE_URL')}}</p>
 
                                 <p class="mt-4 text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
                                     Laravel has wonderful documentation covering every aspect of the framework. Whether you are a newcomer or have prior experience with Laravel, we recommend reading our documentation from beginning to end.

@@ -2,7 +2,7 @@ youtube.com/watch?v=7U2pofxDly0&ab_channel=CodeWithDary
 
 https://www.youtube.com/watch?v=00UqiF4hqNw&ab_channel=TechMan
 
-
+composer install   (= npm install)
 windows:
 C:\Users\John\Desktop\cash\example-app\database\database.sqlite
 WSL:
@@ -15,3 +15,88 @@ docker:
 /app/storage/framework/views
 
 /app/database/database.sqlite
+
+
+gcloud builds submit --tag gcr.io/rock-fortress-384823/testapp
+
+
+gcloud run deploy --image gcr.io/rock-fortress-384823/testapp --platform managed --add-cloudsql-instances rock-fortress-384823:us-west2:laravel-mysql --set-env-vars CLOUD_SQL_CONNECTION_NAME=rock-fortress-384823:us-west2:laravel-mysql
+
+info on cloud sql connecting - https://cloud.google.com/sql/docs/mysql/connect-overview
+
+https://cloud.google.com/sql/docs/mysql/connect-run#php  **** Looks very similar to what we have in our dockerfile. compare! **
+
+https://cloud.google.com/sql/docs/mysql/sql-proxy - maybe not necessary
+
+
+https://www.youtube.com/watch?v=jvZXbJv6qJ4&ab_channel=CloudAdvocate
+
+High level overview:
+    - used this for deploy of php service: https://cloud.google.com/run/docs/quickstarts/build-and-deploy/deploy-php-service
+
+    - Enable "sql admin api" in google cloud console.
+    - Make sure your "user" thing has the right permissions. role/cloudsql.client ?
+
+    - Create a Mysql instance in cloud sql
+
+    - open cloud shell (I think you can do this in regular terminal on your local machine too if you have the cli setup)
+
+    (for me I think samplephp should be laravel-mysql ... the name of my sql instance)
+    command below just spits me into a mysql> prompt. so this is like a docker container I think.
+    $ gcloud sql connect samplephp --user=root --quiet
+
+    in "helloworld-php" (just a folder that turned into a "cloud run" service. It could be on my pc too, but it's just in the cloud on Google's... box)
+
+    helloworld-php/  just has the Dockerfile, the index.php, and the test-app.php file.
+    
+    Make sure you're in the correct project with:
+
+    gcloud config set project <project name. demo laravel's rock-fortress thing.>
+
+    update dockerfile to have the pdo and pdo_mysql
+
+    setup application files. use env vars to create the PDO object. along with the cloud_sql_connection_name
+
+    docker file build: gcloud builds submit --tag gcr.io/rock-fortress-384823/testapp
+
+    deploy: gcloud run deploy --image gcr.io/rock-fortress-384823/testapp --platform managed --add-cloudsql-instances rock-fortress-384823:us-west2:laravel-mysql --set-env-vars CLOUD_SQL_CONNECTION_NAME=rock-fortress-384823:us-west2:laravel-mysql
+
+
+
+    unix_socket is in the database.php already. I think if I add it.. it might work.
+
+
+--- For laravel-two ----
+    
+    docker file build:
+    gcloud builds submit --tag gcr.io/rock-fortress-384823/docker-laravel-two
+    
+    
+    deploy:
+    gcloud run deploy --image gcr.io/rock-fortress-384823/docker-laravel-two --platform managed --add-cloudsql-instances rock-fortress-384823:us-west2:laravel-mysql --set-env-vars CLOUD_SQL_CONNECTION_NAME=rock-fortress-384823:us-west2:laravel-mysql
+
+
+
+https://cloud.google.com/sql/docs/mysql/connect-run#php
+
+https://laracasts.com/discuss/channels/servers/laravel-mysql-connection-on-remote-host
+
+https://laracasts.com/discuss/channels/laravel/connecting-to-google-cloud-sql-instance-getting-sqlstatehy000-2002-connection-timed-out
+
+https://cloud.google.com/run/docs/quickstarts/build-and-deploy/deploy-php-service
+
+https://github.com/GoogleCloudPlatform/php-docs-samples/tree/main/cloud_sql/mysql/pdo
+
+https://cloud.google.com/run/docs/configuring/service-accounts
+
+https://cloud.google.com/run/docs/securing/service-identity
+
+https://www.youtube.com/watch?v=jvZXbJv6qJ4&ab_channel=CloudAdvocate
+
+https://www.mongodb.com/compatibility/mongodb-laravel-intergration
+
+https://stackoverflow.com/questions/68609223/laravel-page-the-information-you-re-about-to-submit-is-not-secure-and-later-419
+
+https://www.codeproject.com/Questions/5310408/Error-the-GET-method-is-not-supported-for-this-rou
+
+https://cloud.google.com/sql/docs/mysql/connect-overview

@@ -1,1 +1,17 @@
 youtube.com/watch?v=7U2pofxDly0&ab_channel=CodeWithDary
+
+https://www.youtube.com/watch?v=00UqiF4hqNw&ab_channel=TechMan
+
+
+windows:
+C:\Users\John\Desktop\cash\example-app\database\database.sqlite
+WSL:
+C:\Users\John\Desktop\cash\example-app\database\database.sqlite
+
+local:
+c:\Users\John\Desktop\cash\example-app\storage\framework\views
+
+docker:
+/app/storage/framework/views
+
+/app/database/database.sqlite

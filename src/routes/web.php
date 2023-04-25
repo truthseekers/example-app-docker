@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ApplicationsController;
+use App\Http\Controllers\ApplicationtwoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,3 +27,5 @@ Route::get("/apply", function () {
 Route::get('/applications', [ApplicationsController::class, 'index'])->name('applications');
 
 Route::any('submitapplication', [ApplicationsController::class, 'submitapplication']);
+Route::resource('companies', CompanyController::class);
+Route::resource('applicationtwos', ApplicationtwoController::class);

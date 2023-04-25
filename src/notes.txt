@@ -100,3 +100,10 @@ https://stackoverflow.com/questions/68609223/laravel-page-the-information-you-re
 https://www.codeproject.com/Questions/5310408/Error-the-GET-method-is-not-supported-for-this-rou
 
 https://cloud.google.com/sql/docs/mysql/connect-overview
+
+https://techvblogs.com/blog/laravel-9-crud-application-tutorial-with-example
+
+** Security **
+https://www.stackhawk.com/blog/laravel-csrf-protection-guide/
+
+https://epmnzava.medium.com/how-to-force-https-scheme-on-a-laravel-app-3166ccbd8650

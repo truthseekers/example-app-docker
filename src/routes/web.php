@@ -25,4 +25,4 @@ Route::get("/apply", function () {
 
 Route::get('/applications', [ApplicationsController::class, 'index'])->name('applications');
 
-Route::post('submitapplication', [ApplicationsController::class, 'submitapplication']);
+Route::any('submitapplication', [ApplicationsController::class, 'submitapplication']);

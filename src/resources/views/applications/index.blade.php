@@ -9,7 +9,7 @@
 
 <body>
     <h1>Applications in the view: </h1>
-                        <a style="margin-right: 15px; text-decoration: underline; color: blue;" href="{{route('apply')}}">Apply</a>
+                        <a style="margin-right: 15px; text-decoration: underline; color: blue;" href="{{route('apply')}}">Apply today</a>
     @foreach ($applications as $application)
         <div style="background-color: lightgray; padding: 15px; margin: 10px; width: 50%; border-radius: 15px;">
             <p>{{$application->name}}</p>

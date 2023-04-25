@@ -85,7 +85,7 @@
                 </div>
                 <div class="flex justify-center">
                     <div class="flex justify-start link-container">
-                        <a style="margin-right: 15px; text-decoration: underline; color: blue;" href="{{route('applications')}}">Applications two</a>
+                        <a style="margin-right: 15px; text-decoration: underline; color: blue;" href="{{route('applications')}}">Applications</a>
                     </div>
                 </div>
             </div>

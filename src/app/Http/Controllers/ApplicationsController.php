@@ -24,7 +24,7 @@ class ApplicationsController extends Controller
 
    public function submitapplication(Request $request)
    {
-    
+      print("Test?");
 
     $currentApps = DB::select('select * from applications');
 

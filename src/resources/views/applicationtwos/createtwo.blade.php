@@ -57,41 +57,6 @@
                 <button type="submit" class="btn btn-primary ml-3">Submit</button>
             </div>
         </form>
-        <h2>This might work securely:</h2>
-        <!-- <form action="http://localhost:8000/applicationtwos" method="POST" enctype="multipart/form-data"> -->
-        <form action="https://docker-laravel-truthseekers-g5vwyr4dra-wl.a.run.app/applicationtwos" method="POST" enctype="multipart/form-data">
-            @csrf
-            <div class="row">
-                <div class="col-xs-12 col-sm-12 col-md-12">
-                    <div class="form-group">
-                        <strong>Name:</strong>
-                        <input type="text" name="name" class="form-control" placeholder="Applicant Name">
-                        @error('name')
-                        <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
-                        @enderror
-                    </div>
-                </div>
-                <div class="col-xs-12 col-sm-12 col-md-12">
-                    <div class="form-group">
-                        <strong>Email:</strong>
-                        <input type="email" name="email" class="form-control" placeholder="Applicant Email">
-                        @error('email')
-                        <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
-                        @enderror
-                    </div>
-                </div>
-                <div class="col-xs-12 col-sm-12 col-md-12">
-                    <div class="form-group">
-                        <strong>Credit Score:</strong>
-                        <input type="number" name="creditscore" class="form-control" placeholder="Applicant Credit Score">
-                        @error('creditscore')
-                        <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
-                        @enderror
-                    </div>
-                </div>
-                <button type="submit" class="btn btn-primary ml-3">Submit</button>
-            </div>
-        </form>
     </div>
 </body>
 

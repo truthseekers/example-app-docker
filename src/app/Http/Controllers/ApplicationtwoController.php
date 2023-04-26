@@ -29,6 +29,11 @@ class ApplicationtwoController extends Controller
         return view('applicationtwos.create');
     }
 
+    public function createtwo()
+    {
+        return view('applicationtwos.createtwo');
+    }
+
     /**
     * Store a newly created resource in storage.
     *
